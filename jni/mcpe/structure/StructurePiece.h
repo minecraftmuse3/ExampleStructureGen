@@ -11,7 +11,7 @@ public:
         
         void generateBox(BlockSource*, BoundingBox const&, int, int, int, int, int, int, BlockID, unsigned char, BlockID, unsigned char, bool);
         int getOrientationData(Block*, unsigned char);
-        void postProcessMobsAt(BlockSource*, Random&, BoundingBox const&);
+        virtual void postProcessMobsAt(BlockSource*, Random&, BoundingBox const&);
         void placeBlock(BlockSource*, FullBlock, int, int, int, BoundingBox const&);
         void generateBox(BlockSource*, BoundingBox const&, int, int, int, int, int, int, FullBlock, FullBlock, bool);
         void fillColumnDown(BlockSource*, FullBlock, int, int, int, BoundingBox const&);
