@@ -2,6 +2,8 @@
 
 #include "mcpe/structure/StructurePiece.h"
 
+class StartPiece;
+
 class VillagePiece : public StructurePiece {
 public:
 
