@@ -5,6 +5,7 @@
 #include <mcpe.h>
 #include <Substrate.h>
 
+#include "mcpe/CommonTypes.h"
 #include "mcpe/block/Block.h"
 #include "mcpe/structure/village/components/SimpleHouse.h"
 
