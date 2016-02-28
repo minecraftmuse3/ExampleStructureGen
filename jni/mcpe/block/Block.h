@@ -4,8 +4,10 @@
 #include <vector>
 
 #include "mcpe/renderer/texture/TextureUVCoordinateSet.h"
-#include "mcpe/renderer/renderer/Color.h"
+#include "mcpe/util/Color.h"
+#include "mcpe/util/Random.h"
 #include "mcpe/phys/AABB.h"
+#include "mcpe/phys/Vec3.h"
 
 struct Material;
 class BlockEntity;
@@ -17,11 +19,8 @@ struct Entity;
 struct Mob;
 struct Player;
 struct ItemInstance;
-struct Random;
-struct Vec3;
 struct Brightness;
 struct CreativeItemCategory;
-struct Color;
 
 class Block
 {

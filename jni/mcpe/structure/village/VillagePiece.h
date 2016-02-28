@@ -2,7 +2,11 @@
 
 #include "mcpe/structure/StructurePiece.h"
 
+class CompoundTag;
 class StartPiece;
+class BlockSource;
+class BoundingBox;
+class FullBlock;
 
 class VillagePiece : public StructurePiece {
 public:
