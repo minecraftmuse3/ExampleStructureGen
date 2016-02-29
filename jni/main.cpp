@@ -13,28 +13,14 @@
 
 void (*_SimpleHouse$postProcess)(SimpleHouse* self, BlockSource*, Random&, BoundingBox const&);
 void SimpleHouse$postProcess(SimpleHouse* self, BlockSource* region, Random& rand, BoundingBox const& bounds) {
+	/*
+	  StructurePiece::generateBlock(region, boundingbox, minX, minY, minZ, maxX, maxY, maxZ, block1, block2, replacesExisting);
+	  StructurePiece::placeBlock(region, minX, minY, minZ, block, bounds);
+	*/
+	
 	//We generate a basic wall
-	self->placeBlock(region, {Block::mBrick->blockId, 0}, 0, 0, 0, bounds);
-	self->placeBlock(region, {Block::mBrick->blockId, 0}, 0, 1, 0, bounds);
-	self->placeBlock(region, {Block::mBrick->blockId, 0}, 0, 2, 0, bounds);
-	self->placeBlock(region, {Block::mBrick->blockId, 0}, 0, 3, 0, bounds);
-	self->placeBlock(region, {Block::mBrick->blockId, 0}, 0, 4, 0, bounds);
-	self->placeBlock(region, {Block::mBrick->blockId, 0}, 4, 1, 0, bounds);
-	self->placeBlock(region, {Block::mBrick->blockId, 0}, 4, 2, 0, bounds);
-	self->placeBlock(region, {Block::mBrick->blockId, 0}, 4, 3, 0, bounds);
-	self->placeBlock(region, {Block::mBrick->blockId, 0}, 4, 4, 0, bounds);
-	self->placeBlock(region, {Block::mBrick->blockId, 0}, 1, 4, 0, bounds);
-	self->placeBlock(region, {Block::mBrick->blockId, 0}, 2, 4, 0, bounds);
-	self->placeBlock(region, {Block::mBrick->blockId, 0}, 3, 4, 0, bounds);
-	self->placeBlock(region, {Block::mBrick->blockId, 0}, 4, 4, 0, bounds);
-	self->placeBlock(region, {Block::mWoodPlanks->blockId, 0}, 1, 1, 0, bounds);
-	self->placeBlock(region, {Block::mWoodPlanks->blockId, 0}, 3, 1, 0, bounds);
-	self->placeBlock(region, {Block::mWoodPlanks->blockId, 0}, 1, 2, 0, bounds);
-	self->placeBlock(region, {Block::mWoodPlanks->blockId, 0}, 3, 2, 0, bounds);
-	self->placeBlock(region, {Block::mWoodPlanks->blockId, 0}, 1, 3, 0, bounds);
-	self->placeBlock(region, {Block::mWoodPlanks->blockId, 0}, 2, 3, 0, bounds);
-	self->placeBlock(region, {Block::mWoodPlanks->blockId, 0}, 3, 3, 0, bounds);
-	//self->generateBox(region, bounds, 0, 0, 0, 5, 5, 5, {Block::mStone->blockId, 0}, {Block::mStone->blockId, 0}, true);//This function only replaces blocks already placed
+	self->generateBox(region, bounds, 0, 0, 0, 4, 4, 0, {Block::mBrick->blockId, 0}, {Block::mBrick->blockId}, false);
+	self->generateBox(region, bounds, 1, 1, 0, 3, 3, 0, {Block::mWoodPlanks->blockId, 0}, {Block::mWoodPlanks->blockId}, false);
 }
 
 JNIEXPORT jint JNI_OnLoad(JavaVM* vm, void* reserved) {
