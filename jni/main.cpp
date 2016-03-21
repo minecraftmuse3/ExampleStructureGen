@@ -14,13 +14,14 @@
 void (*_SimpleHouse$postProcess)(SimpleHouse* self, BlockSource*, Random&, BoundingBox const&);
 void SimpleHouse$postProcess(SimpleHouse* self, BlockSource* region, Random& rand, BoundingBox const& bounds) {
 	/*
-	  StructurePiece::generateBlock(region, boundingbox, minX, minY, minZ, maxX, maxY, maxZ, block1, block2, replacesExisting);
-	  StructurePiece::placeBlock(region, minX, minY, minZ, block, bounds);
+	  StructurePiece::generateBlock(region, bounds, minX, minY, minZ, maxX, maxY, maxZ, outsideBlock, insideBlock, replacesExisting);
+	  StructurePiece::placeBlock(region, x, y, z, block, bounds);
+	  StructurePiece::createDoor(region, bounds, rand, x, y, z);
 	*/
 	
 	//We generate a basic wall
-	self->generateBox(region, bounds, 0, 0, 0, 4, 4, 0, {Block::mBrick->blockId, 0}, {Block::mBrick->blockId}, false);
-	self->generateBox(region, bounds, 1, 1, 0, 3, 3, 0, {Block::mWoodPlanks->blockId, 0}, {Block::mWoodPlanks->blockId}, false);
+	self->generateBox(region, bounds, 0, 0, 0, 4, 4, 4, {Block::mBrick->blockId, 0}, {Block::mAir->blockId}, false);
+	self->createDoor(region, bounds, rand, 2, 1, 0);
 }
 
 JNIEXPORT jint JNI_OnLoad(JavaVM* vm, void* reserved) {
