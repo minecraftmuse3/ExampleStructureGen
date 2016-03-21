@@ -3,24 +3,23 @@
 #include <string>
 #include <vector>
 
-#include "mcpe/renderer/texture/TextureUVCoordinateSet.h"
-#include "mcpe/util/Color.h"
-#include "mcpe/util/Random.h"
-#include "mcpe/phys/AABB.h"
-#include "mcpe/phys/Vec3.h"
-
-struct Material;
+#include "../renderer/texture/TextureUVCoordinateSet.h"
+#include "../phys/AABB.h"
+#include "../phys/Vec3.h"
+class Random;
+class Color;
+class Material;
 class BlockEntity;
-struct Container;
+class Container;
 struct FullBlock;
 struct BlockPos;
 struct BlockSource;
 struct Entity;
 struct Mob;
-struct Player;
-struct ItemInstance;
+class Player;
+class ItemInstance;
 struct Brightness;
-struct CreativeItemCategory;
+enum class CreativeItemCategory;
 
 class Block
 {
