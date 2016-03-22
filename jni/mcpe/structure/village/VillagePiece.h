@@ -1,8 +1,7 @@
 #pragma once
 
-#include "../StructurePiece.h"
+#include "../StartPiece.h"
 class CompoundTag;
-class StartPiece;
 class BlockSource;
 class BoundingBox;
 class FullBlock;
@@ -13,7 +12,6 @@ public:
 	VillagePiece(StartPiece*, int);
 
 	virtual ~VillagePiece();
-
 	virtual int getVillagerProfession(int);
 	virtual void addAdditionalSaveData(CompoundTag&);
 	virtual void readAdditionalSaveData(CompoundTag&);
