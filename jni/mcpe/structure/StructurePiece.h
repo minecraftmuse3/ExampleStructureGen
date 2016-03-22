@@ -1,10 +1,13 @@
 #pragma once
 
+class Block;
 class BlockID;
 class BlockSource;
 class BoundingBox;
 class FullBlock;
 class Random;
+class BlockSelector;
+class ChunkPos;
 class Brightness;
 
 class StructurePiece {
@@ -18,8 +21,8 @@ public:
 	void createTag();
 	void getBrightness(int, int, int, BlockSource*);
 	void getLocatorPosition();
-	void getOrientationData(Block*, uchar);
-	void getTorchData(uchar);
+	void getOrientationData(Block*, unsigned char);
+	void getTorchData(unsigned char);
 	void getBlock(BlockSource*, int, int, int, BoundingBox const&);
 	bool isAir(BlockSource*, int, int, int, BoundingBox const&);
 	//void createChest(BlockSource*, BoundingBox const&, Random &, int, int, int, int, std::vector<WeighedTreasureItem, std::allocator<WeighedTreasureItem>> const&, int);
@@ -31,8 +34,8 @@ public:
 	void generateBox(BlockSource*, BoundingBox const&, BoundingBox const&, BlockID, BlockID, bool);
 	void generateBox(BlockSource*, BoundingBox const&, int, int, int, int, int, int, FullBlock, FullBlock, bool);
 	void generateBox(BlockSource*, BoundingBox const&, BoundingBox const&, bool, Random&, BlockSelector*);
-	//void generateBox(BlockSource*, BoundingBox const&, int, int, int, int, int, int, BlockID, uchar, BlockID, uchar, bool);
-	//void generateBox(BlockSource*, BoundingBox const&, int, int, int, int, int, int, bool, Random&, BlockSelector*);
+	void generateBox(BlockSource*, BoundingBox const&, int, int, int, int, int, int, BlockID, unsigned char, BlockID, unsigned char, bool);
+	void generateBox(BlockSource*, BoundingBox const&, int, int, int, int, int, int, bool, Random&, BlockSelector*);
 	void generateMaybeBox(BlockSource*, BoundingBox const&, Random&, float, int, int, int, int, int, int, BlockID, BlockID, bool, Brightness);
 	void generateUpperHalfSphere(BlockSource*, BoundingBox const&, int, int, int, int, int, int, BlockID, bool);
 	void isInChunk(ChunkPos const&);
