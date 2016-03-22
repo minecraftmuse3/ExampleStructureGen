@@ -15,6 +15,6 @@ public:
 	void fillColumnDown(BlockSource*, FullBlock, int, int, int, BoundingBox const&);
 	//void createChest(BlockSource*, BoundingBox const&, Random&, int, int, int, int, std::vector<WeightedTreasureItem, std::allocator<WeightedTreasureItem>> const&, int);
 	void createDoor(BlockSource*, BoundingBox const&, Random&, int, int, int);
-	void getBlock(BlockSource*, int, int, int BoundingBox, const&);
-	bool isAir(BlockSource*, int, int, int BoundingBox, const&);
+	void getBlock(BlockSource*, int, int, int, BoundingBox const&);
+	bool isAir(BlockSource*, int, int, int, BoundingBox const&);
 };
