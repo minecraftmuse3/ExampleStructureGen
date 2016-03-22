@@ -6,8 +6,8 @@
 #include "../renderer/texture/TextureUVCoordinateSet.h"
 #include "../phys/AABB.h"
 #include "../phys/Vec3.h"
-class Random;
-class Color;
+#include "../util/Random.h"
+#include "../util/Color.h"
 class Material;
 class BlockEntity;
 class Container;
