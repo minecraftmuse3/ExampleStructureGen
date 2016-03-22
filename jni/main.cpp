@@ -16,12 +16,12 @@ void SimpleHouse$postProcess(SimpleHouse* self, BlockSource* region, Random& ran
 	/*
 	  StructurePiece::generateBlock(region, bounds, minX, minY, minZ, maxX, maxY, maxZ, outsideBlock, insideBlock, replacesExisting);
 	  StructurePiece::placeBlock(region, x, y, z, block, bounds);
-	  StructurePiece::createDoor(region, bounds, rand, x, y, z);
+	  StructurePiece::createDoor(region, bounds, rand, x, y, z, 0);
 	*/
 	
 	//We generate a basic wall
-	self->generateBox(region, bounds, 0, 0, 0, 4, 4, 4, {Block::mBrick->blockId, 0}, {Block::mAir->blockId}, false);
-	self->createDoor(region, bounds, rand, 2, 1, 0);
+	self->generateBox(region, bounds, 0, 0, 0, 4, 4, 4, {Block::mBrick->blockId, 0}, {Block::mAir->blockId, 0}, false);
+	self->createDoor(region, bounds, rand, 2, 1, 0, 0);
 }
 
 JNIEXPORT jint JNI_OnLoad(JavaVM* vm, void* reserved) {
