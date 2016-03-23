@@ -23,9 +23,9 @@ public:
 	void getLocatorPosition();
 	void getOrientationData(Block*, unsigned char);
 	void getTorchData(unsigned char);
-	void getBlock(BlockSource*, int, int, int, BoundingBox const&);
+	FullBlock getBlock(BlockSource*, int, int, int, BoundingBox const&);
 	bool isAir(BlockSource*, int, int, int, BoundingBox const&);
-	//void createChest(BlockSource*, BoundingBox const&, Random &, int, int, int, int, std::vector<WeighedTreasureItem, std::allocator<WeighedTreasureItem>> const&, int);
+	//void createChest(BlockSource*, BoundingBox const&, Random&, int, int, int, int, std::vector<WeighedTreasureItem, std::allocator<WeighedTreasureItem>> const&, int);
 	void createDoor(BlockSource*, BoundingBox const&, Random&, int, int, int, int);
 	void edgesLiquid(BlockSource*, BoundingBox const&);
 	void fillColumnDown(BlockSource*, FullBlock, int, int, int, BoundingBox const&);
