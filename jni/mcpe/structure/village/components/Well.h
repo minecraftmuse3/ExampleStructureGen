@@ -6,11 +6,12 @@ class BlockSource;
 class BoundingBox;
 class Random;
 
-class LightPost : public VillagePiece {
+class Well : public VillagePiece {
 public:
-	LightPost();
-	LightPost(StartPiece*, int, Random&, BoundingBox const&, int);
+	Well();
+	Well(StartPiece*, int, Random&, int, int);
+	Well(StartPiece*, int, Random&, BoundingBox const&, int);
 
-	virtual ~LightPost();
+	virtual ~Well();
 	virtual void postProcess(BlockSource*, Random&, BoundingBox const&);
 };
