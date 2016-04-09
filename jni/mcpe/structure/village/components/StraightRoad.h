@@ -14,5 +14,5 @@ public:
 	virtual ~Smithy();
 	virtual void addAdditionalSaveData(CompoundTag&);
 	virtual void readAdditionalSaveData(CompoundTag&);
-	virtual void postProcess(BlockSource*, Random&, BoundingBox const&);
+	void postProcess(BlockSource*, Random&, BoundingBox const&);
 };

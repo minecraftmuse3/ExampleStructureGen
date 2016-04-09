@@ -14,7 +14,7 @@ public:
 	virtual ~SmallHut();
 	virtual void addAdditionalSaveData(CompoundTag&);
 	virtual void readAdditionalSaveData(CompoundTag&);
-	virtual int getVillagerProfession(int);
-	virtual void postProcessMobsAt(BlockSource*, Random&, BoundingBox const&);
-	virtual void postProcess(BlockSource*, Random&, BoundingBox const&);
+	int getVillagerProfession(int);
+	void postProcessMobsAt(BlockSource*, Random&, BoundingBox const&);
+	void postProcess(BlockSource*, Random&, BoundingBox const&);
 };

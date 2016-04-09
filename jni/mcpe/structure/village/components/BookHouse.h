@@ -14,6 +14,6 @@ public:
 	virtual ~BookHouse();
 	virtual void addAdditionalSaveData(CompoundTag&);
 	virtual void readAdditionalSaveData(CompoundTag&);
-	virtual void postProcessMobsAt(BlockSource*, Random&, BoundingBox const&);
-	virtual void postProcess(BlockSource*, Random&, BoundingBox const&);
+	void postProcessMobsAt(BlockSource*, Random&, BoundingBox const&);
+	void postProcess(BlockSource*, Random&, BoundingBox const&);
 };

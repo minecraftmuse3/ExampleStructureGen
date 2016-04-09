@@ -1,7 +1,6 @@
 #pragma once
 
 #include "../VillagePiece.h"
-class CompoundTag;
 class BlockSource;
 class BoundingBox;
 class Random;
@@ -13,5 +12,5 @@ public:
 	Well(StartPiece*, int, Random&, BoundingBox const&, int);
 
 	virtual ~Well();
-	virtual void postProcess(BlockSource*, Random&, BoundingBox const&);
+	void postProcess(BlockSource*, Random&, BoundingBox const&);
 };
