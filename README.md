@@ -1,3 +1,2 @@
-# Village Generation
-An example project to modify village generaion in Minecraft: Pocket Edition.
-Credit to @minecraftmuse3 (https://twitter.com/DamienMiller11) for the initial work
+#Village Generation 
+An example project to modify village generaion in Minecraft: Pocket Edition. To be loaded in Zhuowei Zang's BlockLauncher. Feel free to edit/fix any of the project's files. Make sure to credit me :). Send all bugs/errors to me here: https://twitter.com/DamienMiller11
