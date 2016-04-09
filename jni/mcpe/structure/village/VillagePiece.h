@@ -16,12 +16,12 @@ public:
 	virtual void addAdditionalSaveData(CompoundTag&);
 	virtual void readAdditionalSaveData(CompoundTag&);
 	virtual void spawnVillagers(BlockSource*, BoundingBox const&, int, int, int, int);
-	void biomeBlock(FullBlock);
+	bool biomeBlock(FullBlock);
 	void fillColumnDown(BlockSource*, FullBlock, int, int, int, BoundingBox const&);
 	void generateBox(BlockSource*, BoundingBox const&, int, int, int, int, int, int, FullBlock, FullBlock, bool);
 	int getAverageGroundHeight(BlockSource*, BoundingBox const&);
 	int getVillagerProfession(int);
-	void isOkBox(BoundingBox const&);
+	bool isOkBox(BoundingBox const&);
 	void placeBlock(BlockSource*, FullBlock, int, int, int, BoundingBox const&);
 	void findAndCreatePieceFactory(StartPiece*, PieceWeight&, std::vector<std::unique_ptr<StructurePiece, std::default_delete<StructurePiece>>, std::allocator<std::unique_ptr<StructurePiece, std::default_delete<StructurePiece>>>>&, Random&, int, int, int, int, int);
 	void generateAndAddPiece(StartPiece*, std::vector<std::unique_ptr<StructurePiece, std::default_delete<StructurePiece>>, std::allocator<std::unique_ptr<StructurePiece, std::default_delete<StructurePiece>>>>&, Random&, int, int, int, int, int);
