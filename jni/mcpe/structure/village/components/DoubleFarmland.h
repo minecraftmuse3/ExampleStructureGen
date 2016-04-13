@@ -6,15 +6,14 @@ class BlockSource;
 class BoundingBox;
 class Random;
 
-class PigHouse : public VillagePiece {
+class DoubleFarmland : public VillagePiece {
 public:
-	PigHouse();
-	PigHouse(StartPiece*, int, Random&, BoundingBox const&, int);
+	DoubleFarmland();
+	DoubleFarmland(StartPiece*, int, Random&, BoundingBox const&, int);
 
-	virtual ~SmallHut();
+	virtual ~DoubleFarmland();
 	virtual void addAdditionalSaveData(CompoundTag&);
 	virtual void readAdditionalSaveData(CompoundTag&);
-	int getVillagerProfession(int);
 	void postProcessMobsAt(BlockSource*, Random&, BoundingBox const&);
 	void postProcess(BlockSource*, Random&, BoundingBox const&);
 };

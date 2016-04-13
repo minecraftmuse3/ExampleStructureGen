@@ -12,6 +12,4 @@ public:
 	virtual ~StartPiece();
 	virtual void getBiomeSource();
 	virtual void getPieceWeights();
-	virtual void addAdditionalSaveData(CompoundTag&);
-	virtual void readAdditionalSaveData(CompoundTag&);
 };

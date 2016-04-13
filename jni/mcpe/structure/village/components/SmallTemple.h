@@ -6,15 +6,16 @@ class BlockSource;
 class BoundingBox;
 class Random;
 
-class PigHouse : public VillagePiece {
+class SmallTemple : public VillagePiece {
 public:
-	PigHouse();
-	PigHouse(StartPiece*, int, Random&, BoundingBox const&, int);
+	SmallTemple();
+	SmallTemple(StartPiece*, int, Random&, BoundingBox const&, int);
 
-	virtual ~SmallHut();
+	virtual ~SmallTemple();
 	virtual void addAdditionalSaveData(CompoundTag&);
 	virtual void readAdditionalSaveData(CompoundTag&);
 	int getVillagerProfession(int);
 	void postProcessMobsAt(BlockSource*, Random&, BoundingBox const&);
 	void postProcess(BlockSource*, Random&, BoundingBox const&);
+	void createPiece(StartPiece*, std::vector<std::unique_ptr<StructurePiece, std::default_delete<StructurePiece>>, std::allocator<std::unique_ptr<StructurePiece, std::default_delete<StructurePiece>>>>&, Random&, int, int, int, int, int);
 };
