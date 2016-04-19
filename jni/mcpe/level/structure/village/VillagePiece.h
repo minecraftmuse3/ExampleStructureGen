@@ -15,7 +15,7 @@ public:
 	virtual ~VillagePiece();
 	virtual void addAdditionalSaveData(CompoundTag&);
 	virtual void readAdditionalSaveData(CompoundTag&);
-	virtual void spawnVillagers(BlockSource*, BoundingBox const&, int, int, int, int);
+	void spawnVillagers(BlockSource*, BoundingBox const&, int, int, int, int);
 	bool biomeBlock(FullBlock);
 	void fillColumnDown(BlockSource*, FullBlock, int, int, int, BoundingBox const&);
 	void generateBox(BlockSource*, BoundingBox const&, int, int, int, int, int, int, FullBlock, FullBlock, bool);
