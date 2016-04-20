@@ -13,15 +13,7 @@
 
 void (*_SimpleHouse$postProcess)(SimpleHouse*, BlockSource*, Random&, BoundingBox const&);
 void SimpleHouse$postProcess(SimpleHouse *self, BlockSource *region, Random &random, BoundingBox const &bounds) {
-	/*
-	  StructurePiece::generateBlock(region, bounds, minX, minY, minZ, maxX, maxY, maxZ, outsideBlocks, insideBlocks, onlyReplaceExisting);
-	  StructurePiece::placeBlock(region, x, y, z, block, bounds);
-	  StructurePiece::createDoor(region, bounds, random, x, y, z, 0);
-	*/
-	
-	//We generate a basic cube
-	self->generateBox(region, bounds, 0, 0, 0, 4, 4, 4, {Block::mBrick->blockId, 0}, {Block::mAir->blockId, 0}, false);
-	self->createDoor(region, bounds, random, 2, 1, 0, 0);
+        self->_postprocess(region, random, bounds);
 }
 
 JNIEXPORT jint JNI_OnLoad(JavaVM* vm, void* reserved) {
