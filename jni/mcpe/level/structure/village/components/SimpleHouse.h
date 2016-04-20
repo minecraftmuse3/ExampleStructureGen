@@ -18,4 +18,6 @@ public:
 
 	virtual void addAdditionalSaveData(CompoundTag&);
 	virtual void readAdditionalSaveData(CompoundTag&);
+	
+	void _postProcess(BlockSource*, Random&, BoundingBox const&);
 };
