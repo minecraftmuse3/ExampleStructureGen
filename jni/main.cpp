@@ -17,11 +17,7 @@ void SimpleHouse$postProcess(SimpleHouse *self, BlockSource *region, Random &ran
 }
 
 JNIEXPORT jint JNI_OnLoad(JavaVM* vm, void* reserved) {
-	
-	void* handle = dlopen("libminecraftpe.so", RTLD_LAZY);
-	void* SimpleHouse$postProcess_ = dlsym(handle, "_ZN11SimpleHouse11postProcessEP11BlockSourceR6RandomRK11BoundingBox");
-
-    MSHookFunction(SimpleHouse$postProcess_, (void*) &SimpleHouse$postProcess, (void**) &_SimpleHouse$postProcess);
+    MSHookFunction(SimpleHouse::postProcess, (void*) &SimpleHouse$postProcess, (void**) &_SimpleHouse$postProcess);
 
 	return JNI_VERSION_1_2;
 }
