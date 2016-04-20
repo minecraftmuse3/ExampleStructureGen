@@ -13,7 +13,7 @@
 
 void (*_SimpleHouse$postProcess)(SimpleHouse*, BlockSource*, Random&, BoundingBox const&);
 void SimpleHouse$postProcess(SimpleHouse *self, BlockSource *region, Random &random, BoundingBox const &bounds) {
-        self->_postprocess(region, random, bounds);
+	genSimpleHouse(region, random, bounds);
 }
 
 JNIEXPORT jint JNI_OnLoad(JavaVM* vm, void* reserved) {

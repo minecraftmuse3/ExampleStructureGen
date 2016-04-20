@@ -9,7 +9,7 @@ class Random;
 class Farmland : public VillagePiece {
 public:
 	Farmland();
-	Farmland(StartPiece*, int, Random&, BoundingBox const&, int);s
+	Farmland(StartPiece*, int, Random&, BoundingBox const&, int);
 	~Farmland();
 
 	void postProcessMobsAt(BlockSource*, Random&, BoundingBox const&);

@@ -14,6 +14,7 @@ public:
 	
 	void postProcessMobsAt(BlockSource*, Random&, BoundingBox const&);
 	void postProcess(BlockSource*, Random&, BoundingBox const&);
+	
 	virtual void addAdditionalSaveData(CompoundTag&);
 	virtual void readAdditionalSaveData(CompoundTag&);
 

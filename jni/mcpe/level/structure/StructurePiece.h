@@ -21,10 +21,13 @@ public:
 	Random& random;
 	BlockSource* region;
 	BoundingBox const& bounds;
+	ChunkPos const& chunk;
+	int x;
+	int y;
+	int z;
 
 	virtual ~StructurePiece();
 
-	//void addChildren(StructurePiece*, std::vector<std::unique_ptr<StructurePiece, std::default_delete<StructurePiece>>, std::allocator<std::unique_ptr<StructurePiece, std::default_delete<StructurePiece>>>>&, Random&);
 	void _getWorldPos(int, int, int);
 	void getWorldX(int, int);
 	void getWorldY(int);
@@ -36,7 +39,7 @@ public:
 	void getTorchData(unsigned char);
 	FullBlock getBlock(BlockSource*, int, int, int, BoundingBox const&);
 	bool isAir(BlockSource*, int, int, int, BoundingBox const&);
-	void createChest(BlockSource*, BoundingBox const&, Random&, int, int, int, int, std::vector<WeighedTreasureItem, std::allocator<WeighedTreasureItem>> const&, int);
+	//void createChest(BlockSource*, BoundingBox const&, Random&, int, int, int, int, std::vector<WeighedTreasureItem, std::allocator<WeighedTreasureItem>> const&, int);
 	void createDoor(BlockSource*, BoundingBox const&, Random&, int, int, int, int);
 	void edgesLiquid(BlockSource*, BoundingBox const&);
 	void fillColumnDown(BlockSource*, FullBlock, int, int, int, BoundingBox const&);

@@ -3,11 +3,11 @@
 #include <string>
 #include <vector>
 
-#include "../renderer/texture/TextureUVCoordinateSet.h"
-#include "../phys/AABB.h"
-#include "../phys/Vec3.h"
-#include "../util/Random.h"
-#include "../util/Color.h"
+#include "mcpe/renderer/texture/TextureUVCoordinateSet.h"
+#include "../../phys/AABB.h"
+#include "../../phys/Vec3.h"
+#include "../../util/Random.h"
+#include "../../util/Color.h"
 class Material;
 class BlockEntity;
 class Container;
