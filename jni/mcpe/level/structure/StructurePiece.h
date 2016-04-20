@@ -15,12 +15,16 @@ class WeighedTreasureItem;
 
 class StructurePiece {
 public:
-	BlockID id; // 9
-	unsigned char data; // 10
+	BlockID id;
+	unsigned char data;
+	Block* block;
+	Random& random;
+	BlockSource* region;
+	BoundingBox const& bounds;
 
 	virtual ~StructurePiece();
 
-	void addChildren(StructurePiece*, std::vector<std::unique_ptr<StructurePiece, std::default_delete<StructurePiece>>, std::allocator<std::unique_ptr<StructurePiece, std::default_delete<StructurePiece>>>>&, Random&);
+	//void addChildren(StructurePiece*, std::vector<std::unique_ptr<StructurePiece, std::default_delete<StructurePiece>>, std::allocator<std::unique_ptr<StructurePiece, std::default_delete<StructurePiece>>>>&, Random&);
 	void _getWorldPos(int, int, int);
 	void getWorldX(int, int);
 	void getWorldY(int);
