@@ -10,10 +10,11 @@ class Smithy : public VillagePiece {
 public:
 	Smithy();
 	Smithy(StartPiece*, int, Random&, BoundingBox const&, int);
-
-	virtual ~Smithy();
-	virtual void addAdditionalSaveData(CompoundTag&);
-	virtual void readAdditionalSaveData(CompoundTag&);
+	~Smithy();
+	
 	void postProcessMobsAt(BlockSource*, Random&, BoundingBox const&);
 	void postProcess(BlockSource*, Random&, BoundingBox const&);
+	virtual void addAdditionalSaveData(CompoundTag&);
+	virtual void readAdditionalSaveData(CompoundTag&);
+
 };

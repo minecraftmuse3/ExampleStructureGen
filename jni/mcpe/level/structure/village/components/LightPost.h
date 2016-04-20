@@ -9,7 +9,7 @@ class LightPost : public VillagePiece {
 public:
 	LightPost();
 	LightPost(StartPiece*, int, Random&, BoundingBox const&, int);
+	~LightPost();
 
-	virtual ~LightPost();
 	void postProcess(BlockSource*, Random&, BoundingBox const&);
 };

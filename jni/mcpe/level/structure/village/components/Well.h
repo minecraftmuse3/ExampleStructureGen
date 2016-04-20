@@ -10,7 +10,7 @@ public:
 	Well();
 	Well(StartPiece*, int, Random&, int, int);
 	Well(StartPiece*, int, Random&, BoundingBox const&, int);
+	~Well();
 
-	virtual ~Well();
 	void postProcess(BlockSource*, Random&, BoundingBox const&);
 };

@@ -10,10 +10,11 @@ class SmallHut : public VillagePiece {
 public:
 	SmallHut();
 	SmallHut(StartPiece*, int, Random&, BoundingBox const&, int);
+	~SmallHut();
 
-	virtual ~SmallHut();
-	virtual void addAdditionalSaveData(CompoundTag&);
-	virtual void readAdditionalSaveData(CompoundTag&);
 	void postProcessMobsAt(BlockSource*, Random&, BoundingBox const&);
 	void postProcess(BlockSource*, Random&, BoundingBox const&);
+
+	virtual void addAdditionalSaveData(CompoundTag&);
+	virtual void readAdditionalSaveData(CompoundTag&);
 };

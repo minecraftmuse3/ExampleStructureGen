@@ -10,11 +10,12 @@ class PigHouse : public VillagePiece {
 public:
 	PigHouse();
 	PigHouse(StartPiece*, int, Random&, BoundingBox const&, int);
+	~SmallHut();
 
-	virtual ~SmallHut();
-	virtual void addAdditionalSaveData(CompoundTag&);
-	virtual void readAdditionalSaveData(CompoundTag&);
 	int getVillagerProfession(int);
 	void postProcessMobsAt(BlockSource*, Random&, BoundingBox const&);
 	void postProcess(BlockSource*, Random&, BoundingBox const&);
+
+	virtual void addAdditionalSaveData(CompoundTag&);
+	virtual void readAdditionalSaveData(CompoundTag&);
 };
