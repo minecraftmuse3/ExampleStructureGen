@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../StructurePiece.h"
+#include "mcpe/level/structure/StructurePiece.h"
 class MineshaftData;
 class BlockSource;
 class BoundingBox;

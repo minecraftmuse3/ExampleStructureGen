@@ -5,19 +5,30 @@
 #include <Substrate.h>
 
 #include "mcpe/CommonTypes.h"
-#include "mcpe/block/Block.h"
-#include "mcpe/structure/village/components/SimpleHouse.h"
+#include "mcpe/level/block/Block.h"
+#include "mcpe/level/structure/village/components/SimpleHouse.h"
+#include "mcpe/level/structure/mineshaft/components/MineshaftCorridor.h"
 
-#define LOG_TAG "Village-Generation"
+#define LOG_TAG "Structure-Generation"
 #define LOGI(...) ((void)__android_log_print(ANDROID_LOG_INFO, LOG_TAG, __VA_ARGS__))
 
 void (*_SimpleHouse$postProcess)(SimpleHouse*, BlockSource*, Random&, BoundingBox const&);
 void SimpleHouse$postProcess(SimpleHouse *self, BlockSource *region, Random &random, BoundingBox const &bounds) {
-	genSimpleHouse(region, random, bounds);
+	self->genSimpleHouse(region, random, bounds);
+}
+
+void (*_MineshaftCorridor$postProcess)(MineshaftCorridor*, BlockSource*, Random&, BoundingBox const&);
+void MineshaftCorridor$postProcess(MineshaftCorridor *self, BlockSource *region, Random &random, BoundingBox const &bounds) {
+	 self->genCustomMineshaft(region, random, bounds);
 }
 
 JNIEXPORT jint JNI_OnLoad(JavaVM* vm, void* reserved) {
-    MSHookFunction(SimpleHouse::postProcess, (void*) &SimpleHouse$postProcess, (void**) &_SimpleHouse$postProcess);
+    void* handle = dlopen("libminecraftpe.so", RTLD_LAZY); 
+    void* SimpleHouse$postProcess_ = dlsym(handle, "_ZN11SimpleHouse11postProcessEP11BlockSourceR6RandomRK11BoundingBox");
+    void* MineshaftCorridor$postProcess_ = dlsym(handle, "_ZN17MineshaftCorridor11postProcessEP11BlockSourceR6RandomRK11BoundingBox");
+
+    MSHookFunction(SimpleHouse$postProcess_, (void*) &SimpleHouse$postProcess, (void**) &_SimpleHouse$postProcess);
+    MSHookFunction(MineshaftCorridor$postProcess_, (void*) &MineshaftCorridor$postProcess, (void**) &_MineshaftCorridor$postProcess);
 
 	return JNI_VERSION_1_2;
 }

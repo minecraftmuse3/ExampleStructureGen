@@ -1,6 +1,9 @@
 #pragma once
 
-#include "../../../../CommonTypes.h"
+#include <memory>
+#include <vector>
+
+#include "mcpe/CommonTypes.h"
 
 class Block;
 class BlockID;
