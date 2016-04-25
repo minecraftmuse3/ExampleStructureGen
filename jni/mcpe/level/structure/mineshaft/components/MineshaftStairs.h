@@ -9,14 +9,17 @@ class Random;
 
 class MineshaftStairs : public MineshaftPiece {
 public:
+	MineshaftData& data;
+	Random& random;
+	BlockSource* region;
+	BoundingBox const& bounds;
+
 	MineshaftStairs(MineshaftData&);
 	MineshaftStairs(MineshaftData&, int, Random&, BoundingBox const&, int);
 
-	virtual ~MineshaftStairs();
+	~MineshaftStairs();
+	void postProcess(BlockSource*, Random&, BoundingBox const&);
+
 	virtual void addAdditionalSaveData(CompoundTag&);
 	virtual void readAdditionalSaveData(CompoundTag&);
-	virtual void postProcess(BlockSource*, Random&, BoundingBox const&);
-	void findCorridorSize(std::vector<std::unique_ptr<StructurePiece, std::default_delete<StructurePiece>>, std::allocator<std::unique_ptr<StructurePiece, std::default_delete<StructurePiece>>>>&, Random&, int, int, int, int);
-	void addChildren(StructurePiece*, std::vector<std::unique_ptr<StructurePiece, std::default_delete<StructurePiece>>, std::allocator<std::unique_ptr<StructurePiece, std::default_delete<StructurePiece>>>>&, Random&);
-	void findStairs(std::vector<std::unique_ptr<StructurePiece, std::default_delete<StructurePiece>>, std::allocator<std::unique_ptr<StructurePiece, std::default_delete<StructurePiece>>>>&, Random&, int, int, int, int);
 };
