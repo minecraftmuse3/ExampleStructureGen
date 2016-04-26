@@ -29,15 +29,14 @@ void MineshaftCorridor$postProcess(DesertPyramidPiece *self, BlockSource *region
 }
 
 JNIEXPORT jint JNI_OnLoad(JavaVM* vm, void* reserved) {
-    void* handle = dlopen("libminecraftpe.so", RTLD_LAZY); 
+    /*void* handle = dlopen("libminecraftpe.so", RTLD_LAZY); 
     void* SimpleHouse$postProcess_ = dlsym(handle, "_ZN11SimpleHouse11postProcessEP11BlockSourceR6RandomRK11BoundingBox");
     void* MineshaftCorridor$postProcess_ = dlsym(handle, "_ZN17MineshaftCorridor11postProcessEP11BlockSourceR6RandomRK11BoundingBox");
-	void* DesertPyramidPiece$postProcess_ = dlsym(handle, "_ZN18DesertPyramidPiece11postProcessEP11BlockSourceR6RandomRK11BoundingBox");
+	void* DesertPyramidPiece$postProcess_ = dlsym(handle, "_ZN18DesertPyramidPiece11postProcessEP11BlockSourceR6RandomRK11BoundingBox");*/
 
-    MSHookFunction(SimpleHouse$postProcess_, (void*) &SimpleHouse$postProcess, (void**) &_SimpleHouse$postProcess);
-    MSHookFunction(MineshaftCorridor$postProcess_, (void*) &MineshaftCorridor$postProcess, (void**) &_MineshaftCorridor$postProcess);
-	MSHookFunction(MineshaftCorridor$postProcess_, (void*)&MineshaftCorridor$postProcess, (void**)&_MineshaftCorridor$postProcess);
-	MSHookFunction(DesertPyramidPiece$postProcess_, (void*)&DesertPyramidPiece$postProcess, (void**)&_DesertPyramidPiece$postProcess);
+    MSHookFunction((void*) &SimpleHouse::postProcess, (void*) &SimpleHouse$postProcess, (void**) &_SimpleHouse$postProcess);
+	MSHookFunction((void*) &MineshaftCorridor::postProcess, (void*) &MineshaftCorridor$postProcess, (void**) &_MineshaftCorridor$postProcess);
+	MSHookFunction((void*) &DesertPyramidPiece::postProcess, (void*) &DesertPyramidPiece$postProcess, (void**) &_DesertPyramidPiece$postProcess);
 
 	return JNI_VERSION_1_2;
 }
