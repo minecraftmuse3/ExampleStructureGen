@@ -3,7 +3,6 @@
 #include <memory>
 #include <vector>
 
-#include "mcpe/CommonTypes.h"
 #include "../BlockSource.h"
 class Block;
 class BoundingBox;
@@ -21,7 +20,7 @@ public:
 	Random& random;
 	BlockSource* region;
 	BoundingBox const& bounds;
-	ChunkPos const& chunk;
+	ChunkPos const& chunkPos;
 	int x;
 	int y;
 	int z;
@@ -55,4 +54,7 @@ public:
 	bool isInChunk(ChunkPos const&);
 	void placeBlock(BlockSource*, FullBlock, int, int, int, BoundingBox const&);
 	void postProcessMobsAt(BlockSource*, Random&, BoundingBox const&);
+
+	//Custom functions
+	Material& getMaterial(BlockSource*, int, int, int);
 };
