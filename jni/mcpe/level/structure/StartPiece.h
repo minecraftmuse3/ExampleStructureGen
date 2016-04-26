@@ -1,15 +1,19 @@
 #pragma once
 
+#include <vector>
+#include <allocators>
+
 #include "StructurePiece.h"
+class BiomeSource;
 class CompoundTag;
 class Random;
+class PieceWeight;
 
-class StartPiece
-{
+class StartPiece {
 public:
-	StartPiece();
+	StartPiece(BiomeSource*, int, Random&, int, int, std::vector<PieceWeight, std::allocator<PieceWeight>>&, int);
 
 	virtual ~StartPiece();
-	virtual void getBiomeSource();
-	virtual void getPieceWeights();
+	void getPieceWeights(void);
+	void getBiomeSource(void);
 };
