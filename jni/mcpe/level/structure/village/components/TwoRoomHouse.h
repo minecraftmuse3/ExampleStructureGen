@@ -8,6 +8,11 @@ class Random;
 
 class TwoRoomHouse : public VillagePiece {
 public:
+	StartPiece* start;
+	Random& random;
+	BlockSource* region;
+	BoundingBox const& bounds;
+
 	TwoRoomHouse();
 	TwoRoomHouse(StartPiece*, int, Random&, BoundingBox const&, int);
 	~TwoRoomHouse();

@@ -3,11 +3,15 @@
 #include "../VillagePiece.h"
 class CompoundTag;
 class BlockSource;
-class BoundingBox;
 class Random;
 
 class BookHouse : public VillagePiece {
 public:
+	StartPiece* start;
+	Random& random;
+	BlockSource* region;
+	BoundingBox const& bounds;
+
 	BookHouse();
 	BookHouse(StartPiece*, int, Random&, BoundingBox const&, int);
 	~BookHouse();

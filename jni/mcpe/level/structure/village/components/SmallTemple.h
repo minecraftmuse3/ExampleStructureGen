@@ -2,12 +2,16 @@
 
 #include "../VillagePiece.h"
 class CompoundTag;
-class BlockSource;
 class BoundingBox;
 class Random;
 
 class SmallTemple : public VillagePiece {
 public:
+	StartPiece* start;
+	Random& random;
+	BlockSource* region;
+	BoundingBox const& bounds;
+
 	SmallTemple();
 	SmallTemple(StartPiece*, int, Random&, BoundingBox const&, int);
 	~SmallTemple();

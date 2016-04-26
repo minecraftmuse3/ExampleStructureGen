@@ -4,10 +4,9 @@
 #include <vector>
 
 #include "mcpe/CommonTypes.h"
-
+#include "../BlockSource.h"
 class Block;
 class BlockID;
-class BlockSource;
 class BoundingBox;
 class FullBlock;
 class Random;

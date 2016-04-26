@@ -2,15 +2,19 @@
 
 #include "../VillagePiece.h"
 class CompoundTag;
-class BlockSource;
 class BoundingBox;
 class Random;
 
 class PigHouse : public VillagePiece {
 public:
+	StartPiece* start;
+	Random& random;
+	BlockSource* region;
+	BoundingBox const& bounds;
+
 	PigHouse();
 	PigHouse(StartPiece*, int, Random&, BoundingBox const&, int);
-	~SmallHut();
+	~PigHouse();
 
 	int getVillagerProfession(int);
 	void postProcessMobsAt(BlockSource*, Random&, BoundingBox const&);

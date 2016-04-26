@@ -2,12 +2,16 @@
 
 #include "../VillagePiece.h"
 class CompoundTag;
-class BlockSource;
 class BoundingBox;
 class Random;
 
 class Smithy : public VillagePiece {
 public:
+	StartPiece* start;
+	Random& random;
+	BlockSource* region;
+	BoundingBox const& bounds;
+
 	Smithy();
 	Smithy(StartPiece*, int, Random&, BoundingBox const&, int);
 	~Smithy();

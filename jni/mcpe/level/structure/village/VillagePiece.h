@@ -10,6 +10,12 @@ class PieceWeight;
 class VillagePiece : public StructurePiece {
 public:
 	StartPiece* start;
+	Random& random;
+	BlockSource* region;
+	BoundingBox const& bounds;
+	int x;
+	int y;
+	int z;
 
 	VillagePiece();
 	VillagePiece(StartPiece*, int);

@@ -2,15 +2,19 @@
 
 #include "../VillagePiece.h"
 class CompoundTag;
-class BlockSource;
 class BoundingBox;
 class Random;
 
 class StraightRoad : public VillagePiece {
 public:
+	StartPiece* start;
+	Random& random;
+	BlockSource* region;
+	BoundingBox const& bounds;
+
 	StraightRoad();
 	StraightRoad(StartPiece*, int, Random&, BoundingBox const&, int);
-	~Smithy();
+	~StraightRoad();
 
 	void postProcess(BlockSource*, Random&, BoundingBox const&);
 

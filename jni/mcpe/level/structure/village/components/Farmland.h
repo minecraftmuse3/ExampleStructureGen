@@ -2,12 +2,16 @@
 
 #include "../VillagePiece.h"
 class CompoundTag;
-class BlockSource;
 class BoundingBox;
 class Random;
 
 class Farmland : public VillagePiece {
 public:
+	StartPiece* start;
+	Random& random;
+	BlockSource* region;
+	BoundingBox const& bounds;
+
 	Farmland();
 	Farmland(StartPiece*, int, Random&, BoundingBox const&, int);
 	~Farmland();
