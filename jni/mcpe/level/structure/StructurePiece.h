@@ -1,6 +1,5 @@
 #pragma once
 
-#include <memory>
 #include <vector>
 
 #include "../BlockSource.h"
@@ -24,6 +23,7 @@ public:
 	int x;
 	int y;
 	int z;
+	int i1;
 
 	virtual ~StructurePiece();
 
