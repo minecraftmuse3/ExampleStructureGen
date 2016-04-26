@@ -57,4 +57,7 @@ public:
 
 	//Custom functions
 	Material& getMaterial(BlockSource*, int, int, int);
+	void placeBlock(BlockSource*, BlockID, int, int, int);
+	void placeBlock(BlockSource*, BlockID, unsigned char, int, int, int);
+	bool isEmptyBlock(BlockSource*, int, int, int);
 };
