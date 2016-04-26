@@ -15,10 +15,11 @@ public:
 	DesertPyramidPiece(Random&, int, int);
 
 	~DesertPyramidPiece();
-	addAdditionalSaveData(CompoundTag&);
-	readAdditionalSaveData(CompoundTag&);
-	postProcess(BlockSource*, Random&, BoundingBox const&);
+	void postProcess(BlockSource*, Random&, BoundingBox const&);
+
+	virtual void addAdditionalSaveData(CompoundTag&);
+	virtual void readAdditionalSaveData(CompoundTag&);
 
 	//Custom functions
-	void genMineshaftCorridor(BlockSource*, Random&, BoundingBox const&);
+	void genPyramidMineshaftCorridor(BlockSource*, Random&, BoundingBox const&);
 };

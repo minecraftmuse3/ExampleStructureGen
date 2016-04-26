@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../StartPiece.h"
+#include "../StructurePiece.h"
 class CompoundTag;
 class BlockSource;
 class BoundingBox;

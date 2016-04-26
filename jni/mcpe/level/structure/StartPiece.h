@@ -1,9 +1,7 @@
 #pragma once
 
 #include <vector>
-#include <allocators>
 
-#include "StructurePiece.h"
 class BiomeSource;
 class CompoundTag;
 class Random;

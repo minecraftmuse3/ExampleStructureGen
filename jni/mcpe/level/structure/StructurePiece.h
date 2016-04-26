@@ -6,9 +6,7 @@
 #include "mcpe/CommonTypes.h"
 #include "../BlockSource.h"
 class Block;
-class BlockID;
 class BoundingBox;
-class FullBlock;
 class Random;
 class BlockSelector;
 class ChunkPos;
