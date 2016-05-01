@@ -2,7 +2,7 @@
 
 #include "mcpe/level/block/Block.h"
 
-void SimpleHouse::genSimpleHouse(BlockSource *region, Random &random, BoundingBox const &bounds) {
+void SimpleHouse::genSimpleHouse(BlockSource *region, Random &random, const BoundingBox &bounds) {
      int avgY = -8;
 
 	//We generate just a cube with a door
