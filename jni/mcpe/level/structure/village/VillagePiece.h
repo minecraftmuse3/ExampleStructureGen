@@ -3,12 +3,10 @@
 #include "../StructurePiece.h"
 #include "../StartPiece.h"
 class CompoundTag;
-class BlockSource;
-class BoundingBox;
-class FullBlock;
 class PieceWeight;
 
-class VillagePiece : public StructurePiece {
+class VillagePiece : public StructurePiece
+{
 public:
 	VillagePiece();
 	VillagePiece(StartPiece*, int);
@@ -24,6 +22,5 @@ public:
 	bool biomeBlock(FullBlock);
 	void generateBox(BlockSource*, const BoundingBox&, int, int, int, int, int, int, FullBlock, FullBlock, bool);
 	int getAverageGroundHeight(BlockSource*, const BoundingBox&);
-	int getVillagerProfession(int);
 	bool isOkBox(const BoundingBox&);
 };

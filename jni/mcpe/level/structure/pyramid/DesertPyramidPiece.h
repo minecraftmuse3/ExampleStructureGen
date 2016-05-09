@@ -1,12 +1,10 @@
 #pragma once
 
 #include "../StructurePiece.h"
-class BoundingBox;
-class BlockSource;
 class CompoundTag;
-class Random;
 
-class DesertPyramidPiece : public StructurePiece {
+class DesertPyramidPiece : public StructurePiece
+{
 public:
 	DesertPyramidPiece(Random&, int, int);
 
